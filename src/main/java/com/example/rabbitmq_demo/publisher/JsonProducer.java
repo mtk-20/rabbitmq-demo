@@ -22,7 +22,7 @@ public class JsonProducer {
     @Value("${rabbitmq.exchange.name}")
     private String exchangeName;
 
-    public void sendMessage(User user) {
+    public void sendJsonMessage(User user) {
         log.info(String.format("Message sent to >>> %s", user.getName()));
         rabbitTemplate.convertAndSend(exchangeName, jsonRoutingKey, user);
     }

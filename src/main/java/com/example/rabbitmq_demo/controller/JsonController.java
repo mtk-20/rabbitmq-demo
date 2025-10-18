@@ -15,7 +15,7 @@ public class JsonController {
 
     @PostMapping("/publish")
     public ResponseEntity<?> sendJsonMessage(@RequestBody User user) {
-        producer.sendMessage(user);
+        producer.sendJsonMessage(user);
         return ResponseEntity.ok("Json message sent to >>> " + user.getName());
     }
 }
